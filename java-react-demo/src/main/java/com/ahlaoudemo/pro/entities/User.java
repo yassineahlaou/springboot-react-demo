@@ -20,7 +20,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-
+//les annotations help hibernate to create table (mapping)
 @Entity  //means this class is for a table in database
 @Table (name="users") //if we don't give a name it will take the same name as the class name
 public class User {
