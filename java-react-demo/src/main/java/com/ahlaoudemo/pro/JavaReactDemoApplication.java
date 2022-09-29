@@ -26,7 +26,7 @@ public class JavaReactDemoApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		//what will run just after spring started
 		
-		userRepo.save(new User(null, "yassine" , "ahlaou" , "yassineahlaou@gmail.com" , 23 , new Date() ));
+		/*userRepo.save(new User(null, "yassine" , "ahlaou" , "yassineahlaou@gmail.com" , 23 , new Date() ));
 		userRepo.save(new User(null, "saad" , "chahi" , "saad@gmail.com" , 30 , new Date() ));
 		userRepo.save(new User(null, "ayoub" , "hanani" , "ayoub@gmail.com" , 30 , new Date() ));
 		userRepo.save(new User(null, "yassine" , "ahlaou" , "yassineahlaou@gmail.com" , 23 , null ));
@@ -79,7 +79,7 @@ public class JavaReactDemoApplication implements CommandLineRunner {
 		pagesUsers.forEach(item->{
 			System.out.println(item.toString());
 		});
-		
+		*/
 	}
 
 }
