@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -27,7 +28,7 @@ public class UserController {
 	@CrossOrigin(origins = "http://localhost:3000")
 	@GetMapping("/api/users")
 	public List <User> users(){
-		return userRepo.findAll();
+		return userRepo.findAll(Sort.by(Sort.Direction.ASC, "id"));
 		
 	}
 	
@@ -49,7 +50,8 @@ public class UserController {
 		}
 		
         User savedUser = userRepo.save(user);
-        return ResponseEntity.created(new URI("/users" + savedUser.getId())).body(savedUser);
+        //return ResponseEntity.created(new URI("/users" + savedUser.getId())).body(savedUser);
+       return ResponseEntity.ok(savedUser);
     }
 	
 	@CrossOrigin(origins = "http://localhost:3000")
