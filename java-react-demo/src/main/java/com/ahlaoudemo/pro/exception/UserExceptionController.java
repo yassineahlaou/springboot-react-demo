@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice  //annotation to handle exceptions globally
 public class UserExceptionController {
-	@ExceptionHandler(value = UserAlreadyExistException.class)
-	   public ResponseEntity<Object> exception(UserAlreadyExistException exception) {
+	@ExceptionHandler(value = EmailAlreadyExistException.class)
+	   public ResponseEntity<Object> exception(EmailAlreadyExistException exception) {
 	      return new ResponseEntity<>("This Email Already Exist", HttpStatus.NOT_FOUND);
 	   }
 

@@ -1,0 +1,16 @@
+.main{
+	
+	.form{
+	display:flex;
+	width:50%;
+	flex-direction:column;
+	}
+	.list{
+		display:flex;
+		flex-direction:column;
+		.item{
+			display:flex;
+			flex-direction:row;
+		}
+	}
+}
