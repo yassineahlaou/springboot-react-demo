@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ahlaoudemo.pro.entities.User;
+import com.ahlaoudemo.pro.exception.UserAlreadyExistException;
 import com.ahlaoudemo.pro.repositories.UserRepository;
 
 @RestController
@@ -28,6 +29,12 @@ public class UserController {
 	@CrossOrigin(origins = "http://localhost:3000")
 	@PostMapping("/addUser")
     public ResponseEntity createClient(@RequestBody User user) throws URISyntaxException {
+		List<User> emailexist = userRepo.findByemail(user.getEmail());
+		
+		if (emailexist.size() != 0) {
+			throw new UserAlreadyExistException();
+		}
+		
         User savedUser = userRepo.save(user);
         return ResponseEntity.created(new URI("/users" + savedUser.getId())).body(savedUser);
     }

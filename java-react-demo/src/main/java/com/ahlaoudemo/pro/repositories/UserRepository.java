@@ -21,6 +21,8 @@ public interface UserRepository extends JpaRepository<User,Long> {
 	
 	public List<User> findByfirstNameContainsAndLastNameContains(String car1, String car2);
 	public List<User> findByfirstNameContainsAndAge(String car1, int age);
+
+	public List<User> findByemail(String email);
 	
 	/*User:what we want to handle
 	Long : type of ID*/
